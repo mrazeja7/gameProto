@@ -22,6 +22,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="walls" type="Spatial" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="wall" parent="walls" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.5346, 0 )
@@ -205,8 +207,6 @@ _sections_unfolded = [ "Light", "Shadow" ]
 
 [node name="ramp" type="Spatial" parent="." index="10"]
 
-editor/display_folded = true
-
 [node name="ramp4" parent="ramp" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 0.7, 0, -3.0598e-08, -0.5, 0, 12.25 )
@@ -221,7 +221,6 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 0.7, 0, -3.0598e-08, -6, 2.
 
 [node name="player" parent="." index="11" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.75, 1.5, 2 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
@@ -250,6 +249,39 @@ enabled = false
 exclude_parent = true
 cast_to = Vector3( 0, -1, 0 )
 collision_mask = 1
+
+[node name="crosshair" type="CanvasLayer" parent="player" index="9"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Label" type="Label" parent="player/crosshair" index="0"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -554.0
+margin_top = -310.0
+margin_right = -514.0
+margin_bottom = -296.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "+"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="ramp2" parent="." index="12" instance=ExtResource( 5 )]
 

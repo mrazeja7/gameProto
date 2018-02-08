@@ -60,7 +60,7 @@ mid_height = 1.0
 radial_segments = 64
 rings = 8
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -112,15 +112,15 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CubeMesh" id=9]
+[sub_resource type="CubeMesh" id=4]
 
-material = SubResource( 8 )
+material = SubResource( 3 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 
 render_priority = 0
 flags_transparent = false
@@ -172,16 +172,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CylinderMesh" id=4]
+[sub_resource type="CylinderMesh" id=6]
 
-material = SubResource( 3 )
+material = SubResource( 5 )
 top_radius = 1.0
 bottom_radius = 1.0
 height = 2.0
 radial_segments = 64
 rings = 4
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=7]
 
 render_priority = 0
 flags_transparent = false
@@ -233,20 +233,20 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="SphereMesh" id=8]
 
-material = SubResource( 5 )
+material = SubResource( 7 )
 radius = 1.0
 height = 2.0
 radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=9]
 
 extents = Vector3( 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=10]
 
 render_priority = 0
 flags_transparent = false
@@ -298,9 +298,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CylinderMesh" id=12]
+[sub_resource type="CylinderMesh" id=11]
 
-material = SubResource( 11 )
+material = SubResource( 10 )
 top_radius = 1.0
 bottom_radius = 1.0
 height = 2.0
@@ -362,7 +362,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 9 )
+mesh = SubResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -417,7 +417,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 9 )
+mesh = SubResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -444,7 +444,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -472,7 +472,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 8 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -491,7 +491,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 
 transform = Transform( 0.199472, 0, 0, 0, 0.516797, 0, 0, 0, 0.20566, 0, 0.724193, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
@@ -507,7 +507,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 12 )
+mesh = SubResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -535,7 +535,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 12 )
+mesh = SubResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]

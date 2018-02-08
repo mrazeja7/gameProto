@@ -11,8 +11,8 @@ var velocity = Vector3()
 var view_sensitivity = 0.3
 var yaw = 0
 var pitch = 0
-const max_accel = 0.02
-const air_accel = 0.1
+
+var third_person = false
 
 func _ready():
 	set_process_input(true)
@@ -63,9 +63,28 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
 		velocity.y = 10
 		
+func rotate_camera():
+	if not third_person:
+		third_person = true
+		get_node("yaw/Camera").translate(Vector3(0,0.75,1.5))
+		get_node("yaw/Camera").rotate_x(deg2rad(-30))
+	else:
+		third_person = false
+		get_node("yaw/Camera").rotate_x(deg2rad(30))
+		get_node("yaw/Camera").translate(Vector3(0,-0.75,-1.5))
+	pass
+		
 func _input(ie):
 	if ie is InputEventKey and Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
+		pass
+	if Input.is_key_pressed(KEY_N):
+		rotate_camera()
+		pass
+	
+	if ie is InputEventKey and Input.is_key_pressed(KEY_F):
+		OS.window_fullscreen = not OS.window_fullscreen
+		get_node("crosshair/Label").visible = not get_node("crosshair/Label").visible
 		pass
 		
 	#mouse movement
