@@ -8,15 +8,17 @@ var direction = Vector3()
 var gravity = -9.8
 var velocity = Vector3()
 
-var view_sensitivity = 0.3
+var view_sensitivity = 0.2
 var yaw = 0
 var pitch = 0
 
+var camera
 var third_person = false
 
 func _ready():
 	set_process_input(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	camera = get_node("yaw/Camera")
 
 func _enter_scene():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -66,12 +68,12 @@ func _physics_process(delta):
 func rotate_camera():
 	if not third_person:
 		third_person = true
-		get_node("yaw/Camera").translate(Vector3(0,0.75,1.5))
-		get_node("yaw/Camera").rotate_x(deg2rad(-30))
+		camera.translate(Vector3(0,0.75,1.5))
+		camera.rotate_x(deg2rad(-30))
 	else:
 		third_person = false
-		get_node("yaw/Camera").rotate_x(deg2rad(30))
-		get_node("yaw/Camera").translate(Vector3(0,-0.75,-1.5))
+		camera.rotate_x(deg2rad(30))
+		camera.translate(Vector3(0,-0.75,-1.5))
 	pass
 		
 func _input(ie):
@@ -92,4 +94,4 @@ func _input(ie):
 		yaw = fmod(yaw - ie.relative.x * view_sensitivity, 360)
 		pitch = max(min(pitch - ie.relative.y * view_sensitivity, 90), -90)
 		set_rotation(Vector3(0, deg2rad(yaw), 0))
-		get_node("yaw/Camera").set_rotation(Vector3(deg2rad(pitch), 0, 0))
+		camera.set_rotation(Vector3(deg2rad(pitch), 0, 0))
