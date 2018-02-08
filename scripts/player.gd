@@ -78,7 +78,7 @@ func _input(ie):
 	if ie is InputEventKey and Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 		pass
-	if Input.is_key_pressed(KEY_N):
+	if Input.is_key_pressed(KEY_C):
 		rotate_camera()
 		pass
 	
