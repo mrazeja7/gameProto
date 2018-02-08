@@ -37,13 +37,13 @@ func _physics_process(delta):
 #	if Input.is_action_pressed("ui_down"):
 #		direction.z += 1
 	direction = Vector3()
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A):
 		direction -= aim[0]
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D):
 		direction += aim[0]
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W):
 		direction -= aim[2]
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") or Input.is_key_pressed(KEY_S):
 		direction += aim[2]
 	
 	direction = direction.normalized()
