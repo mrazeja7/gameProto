@@ -1,2 +1,2 @@
 # gameProto
-CIS 595 rough project prototype
+CIS 585 rough project prototype
